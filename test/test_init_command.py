@@ -1,5 +1,6 @@
 import unittest
 from githide import init_command
+import os
 
 class TestInitCommand(unittest.TestCase):
     def test_init_creates_gitignore_local(self):
