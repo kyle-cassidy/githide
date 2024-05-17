@@ -1,6 +1,6 @@
 import os
 import unittest
-from githide.list_command import list_files
+from githide.list_command import list
 
 class TestListCommand(unittest.TestCase):
     def setUp(self):
@@ -17,7 +17,7 @@ class TestListCommand(unittest.TestCase):
             os.remove(self.test_file)
 
     def test_list_files(self):
-        files = list_files()
+        files = list()
         self.assertIn('test_file.txt', files)
 
 if __name__ == '__main__':
