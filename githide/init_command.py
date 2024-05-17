@@ -21,7 +21,9 @@ def init():
     with open('.git/info/exclude', 'a') as f:
         f.write('.gitignore.local\n')
 
-    # Log the completion of initialization
+    # Output the current git config for core.excludesfile
+    logging.info('Outputting current git config for core.excludesfile')
+    os.system('git config --local --get core.excludesfile')
     logging.info('Initialization complete')
     
     
