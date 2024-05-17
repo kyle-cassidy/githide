@@ -15,28 +15,28 @@ class TestCLI(unittest.TestCase):
             os.remove(self.test_file)
 
     def test_add_command(self):
-        result = subprocess.run(['githide', 'add', 'test_file.txt'], capture_output=True, text=True)
+        result = subprocess.run(['python', '-m', 'githide.cli', 'add', 'test_file.txt'], capture_output=True, text=True)
         self.assertEqual(result.returncode, 0)
         with open(self.test_file, 'r') as f:
             content = f.read()
         self.assertIn('test_file.txt\n', content)
 
     def test_init_command(self):
-        result = subprocess.run(['githide', 'init'], capture_output=True, text=True)
+        result = subprocess.run(['python', '-m', 'githide.cli', 'init'], capture_output=True, text=True)
         self.assertEqual(result.returncode, 0)
         self.assertTrue(os.path.exists(self.test_file))
 
     def test_list_command(self):
         with open(self.test_file, 'w') as f:
             f.write('test_file.txt\n')
-        result = subprocess.run(['githide', 'list'], capture_output=True, text=True)
+        result = subprocess.run(['python', '-m', 'githide.cli', 'list'], capture_output=True, text=True)
         self.assertEqual(result.returncode, 0)
         self.assertIn('test_file.txt', result.stdout)
 
     def test_remove_command(self):
         with open(self.test_file, 'w') as f:
             f.write('test_file.txt\n')
-        result = subprocess.run(['githide', 'remove', 'test_file.txt'], capture_output=True, text=True)
+        result = subprocess.run(['python', '-m', 'githide.cli', 'remove', 'test_file.txt'], capture_output=True, text=True)
         self.assertEqual(result.returncode, 0)
         with open(self.test_file, 'r') as f:
             content = f.read()
@@ -45,7 +45,7 @@ class TestCLI(unittest.TestCase):
     def test_undo_command(self):
         with open(self.test_file, 'w') as f:
             f.write('test_file.txt\n')
-        result = subprocess.run(['githide', 'undo'], capture_output=True, text=True)
+        result = subprocess.run(['python', '-m', 'githide.cli', 'undo'], capture_output=True, text=True)
         self.assertEqual(result.returncode, 0)
         with open(self.test_file, 'r') as f:
             content = f.read()
