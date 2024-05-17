@@ -1,5 +1,11 @@
 # githide
-git hide is a simple tool to hide files in a git repository. It is useful for hiding sensitive information like passwords, API keys, etc. from the git history. Or perhaps you want to leave a note to future you, only for your eyes. 
+git hide is a simple tool to hide files in a git repository when the idea of adding them to a public `.gitignore` is unsavory. 
+
+## other resons it might be useful 
+- perhaps you want to leave a note to future you, only for your eyes. 
+- perhaps you are taking notes in the same directory as your code and you don't want to commit them.
+- i suppose you could hide entire files worth of sensitive information? like passwords, secrets, API keys, etc. this is especially relevant if you are too cool for a proper secrets management tool.
+- perhaps you are working on a project with a team and you want to hide files from your team. you get the idea.
 
 ## under the hood
 githide uses `.git/info/exclude` to hide files. This is a git feature that allows you to ignore files without adding them to `.gitignore`. This is a simple way to hide files from the git history. 
