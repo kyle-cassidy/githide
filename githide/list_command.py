@@ -10,5 +10,4 @@ def list():
     with open('.gitignore.local', 'r') as f:
         lines = f.readlines()
     logging.info('Files listed from .gitignore.local')
-    for line in lines:
-        print(line.strip())
+    return [line.strip() for line in lines]

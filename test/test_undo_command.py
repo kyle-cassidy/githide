@@ -17,7 +17,7 @@ class TestUndoCommand(unittest.TestCase):
             os.remove(self.test_file)
 
     def test_undo(self):
-        undo('test_file.txt')
+        undo()
         with open(self.test_file, 'r') as f:
             content = f.read()
         self.assertNotIn('test_file.txt\n', content)
