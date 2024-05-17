@@ -13,3 +13,25 @@ class TestInitCommand(unittest.TestCase):
 if __name__ == '__main__':
     unittest.main()
 
+import os
+import unittest
+from githide.init_command import init
+
+class TestInitCommand(unittest.TestCase):
+    def setUp(self):
+        self.test_file = '.gitignore.local'
+        # Ensure the test file is clean before each test
+        if os.path.exists(self.test_file):
+            os.remove(self.test_file)
+
+    def tearDown(self):
+        # Clean up the test file after each test
+        if os.path.exists(self.test_file):
+            os.remove(self.test_file)
+
+    def test_init(self):
+        init()
+        self.assertTrue(os.path.exists(self.test_file))
+
+if __name__ == '__main__':
+    unittest.main()
