@@ -8,7 +8,7 @@ git hide is a simple tool to hide files in a git repository when the idea of add
 - perhaps you are working on a project with a team and you want to hide files from your team. the rascal that you are, you `githide` those forbidden fruits. you get the idea.
 
 ## under the hood
-githide uses `.git/info/exclude` to hide files. This is a git feature that allows you to ignore files without adding them to `.gitignore`. This is a simple way to hide files from the git history. 
+githide uses `.git/info/exclude` to hide files. groundbreaking, i know. if you didn't alreay know, it is a git feature that allows you to ignore files without adding them to `.gitignore`.
 
 ## features
 - hide files from the git history using a simple command
