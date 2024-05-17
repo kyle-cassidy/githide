@@ -13,7 +13,6 @@ def init():
     logging.info('Configuring git to use .gitignore.local')
     os.system('git config core.excludesfile .gitignore.local')
     logging.info('Adding .gitignore.local to .git/info/exclude')
-        f.write('# Local gitignore file\n')
-    os.system('git config core.excludesfile .gitignore.local')
+
     with open('.git/info/exclude', 'a') as f:
         f.write('.gitignore.local\n')
