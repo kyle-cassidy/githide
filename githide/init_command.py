@@ -7,12 +7,21 @@ def init():
     """
     Initializes the tool by creating `.gitignore.local` and configures git to use it.
     """
+    # Log the creation of .gitignore.local file
     logging.info('Creating .gitignore.local file')
     with open('.gitignore.local', 'w') as f:
         f.write('# Local gitignore file\n')
+
+    # Log the configuration of git to use .gitignore.local
     logging.info('Configuring git to use .gitignore.local')
     os.system('git config core.excludesfile .gitignore.local')
-    logging.info('Adding .gitignore.local to .git/info/exclude')
 
+    # Log the addition of .gitignore.local to .git/info/exclude
+    logging.info('Adding .gitignore.local to .git/info/exclude')
     with open('.git/info/exclude', 'a') as f:
         f.write('.gitignore.local\n')
+
+    # Log the completion of initialization
+    logging.info('Initialization complete')
+    
+    
