@@ -1,6 +1,6 @@
 import os
 import unittest
-from githide.add_command.py import add
+from githide.add_command import add
 
 class TestAddCommand(unittest.TestCase):
     def setUp(self):
