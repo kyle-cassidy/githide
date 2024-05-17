@@ -53,5 +53,8 @@ githide pop
 - the hidden files are stored in a secondary gitignore file: `.gitignore.local`
 - the hidden files are not tracked by git. They are ignored by git. 
 - githide is not a replacement for a proper secrets management tool. It is a simple tool for hiding files. 
+- did i mention that you can use `githide` to hide diles from the git history?
+
+that's all. have a nice day. 
 
 
