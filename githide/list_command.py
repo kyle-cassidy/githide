@@ -1,4 +1,4 @@
-def list_files():
+def list():
     """
     Lists all hidden files.
     """
