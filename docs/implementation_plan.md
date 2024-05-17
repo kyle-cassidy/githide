@@ -5,7 +5,7 @@
    - Setup a `setup.py` for package distribution.
 
 2. **Develop Core Functionality:**
-   - Implement the `init` command to setup `.gitignore.local` and configure git.
+   - Implement the `init` command to setup `.gitignore.local`, configure git, and add `.gitignore.local` to `.git/info/exclude`.
    - Implement the `add` command to add files to `.gitignore.local`.
    - Implement the `remove` command to remove files from `.gitignore.local`.
    - Implement the `list` command to list all entries in `.gitignore.local`.

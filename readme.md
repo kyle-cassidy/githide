@@ -15,7 +15,7 @@ githide uses `.git/info/exclude` to hide files. This is a git feature that allow
 pip install githide
 ```
 ## usage
-initialize githide. this command will create a secondary gitignore file: `.gitignore.local` at the root of the git repository. it will also execute `git config core.excludesfile .gitignore.local` and add `.gitignore.local` to the .git/info/exclude file. this will ensure that the `.gitignore.local` file, and each file added to it, is not tracked by git.
+initialize githide. This command will create a secondary gitignore file: `.gitignore.local` at the root of the git repository. It will also execute `git config core.excludesfile .gitignore.local` and add `.gitignore.local` to the `.git/info/exclude` file. This will ensure that the `.gitignore.local` file, and each file added to it, is not tracked by git.
 
 ```bash
 githide init
