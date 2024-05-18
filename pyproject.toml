@@ -7,7 +7,7 @@ name = "githide"
 version = "0.1.0"
 description = "A simple tool to hide files in a git repository without adding them to .gitignore."
 readme = "README.md"
-requires-python = ">=3.6"
+requires-python = ">=3.12.2"
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
@@ -15,6 +15,7 @@ classifiers = [
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
 ]
+dependencies = ["click"]
 
 [project.urls]
 "Homepage" = "https://github.com/kyle-cassidy/githide"
@@ -22,5 +23,3 @@ classifiers = [
 [project.scripts]
 githide = "githide.cli:main"
 
-[project.dependencies]
-click = ">=7.0"
