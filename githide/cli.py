@@ -36,7 +36,7 @@ def main():
     elif args.command == "init":
         init()
     elif args.command == "list":
-        files = list()
+        files = []
         for file in files:
             print(file)
     elif args.command == "remove":
