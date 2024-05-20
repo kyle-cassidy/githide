@@ -1,32 +1,46 @@
 # githide
-git hide is a simple tool to hide files in a git repository when the idea of adding them to a public `.gitignore` is unsavory. 
+git hide is a simple tool to hide files in a git repository when the idea of adding them to a public `.gitignore` is unsavory. githide allows you to manipulate the `.git/info/exclude` file from the command line, which bypasses the .gitignore shared by the repo.
 
-## other resons it might be useful 
-- perhaps you want to leave a note to future you, only for your eyes. 
-- perhaps you are taking notes in the same directory as your code and you don't want to commit them.
-- i suppose you could hide entire files worth of sensitive information? like passwords, secrets, API keys, etc. this is especially relevant if you are too cool for a proper secrets management tool.
-- perhaps you are working on a project with a team and you want to hide files from your team. the rascal that you are, you `githide` those forbidden fruits. you get the idea.
+## introduction
+### why githide exists
+- too lazy to manually adjust `.git/info/exclude` manually.
 
-## under the hood
-githide uses `.git/info/exclude` to hide files. groundbreaking, i know. if you didn't alreay know, it is a git feature that allows you to ignore files without adding them to `.gitignore`.
+### usecases
+- write a note in the context of your current working directory:
+  - in an open source project  
+  - a note to future you
+  - personal documentation about a repo you are exploring.
+  - spicy code, for your eyes only
+- another (albiet unnessesary) `git stash`
 
-## features
+### other resons it might be useful 
+- i suppose you could hide anyhting you want from git.
+  - [x] an entire file worth of sensitive information? it is probably not a good idea to hide passwords, secrets, or API keys in plain text, but you sure could hide it from the prying eyes of the git history. this is especially relevant if you are too cool for a proper secrets management tool.
+  - [x] perhaps you are working on a project with a team and you want to hide files from your team because you are up to some hyjinks. the rascal that you are, you `githide` those forbidden fruits. you get it, ya scallywag.
+- any other reason you don't want to commit a file.
+
+### under the hood
+githide uses `.git/info/exclude` to hide files. groundbreaking, i know. if you didn't alreay know, or didn't read the introduction, it is a git feature that allows you to ignore files without adding them to `.gitignore`.
+
+## features, installation, and usage
+### features
 - hide files from the git history using a simple command
-- create a secondary --local gitignore file: `.gitignore.local`
+- a private `.gitignore`: create a secondary --local gitignore file: `.gitignore.local` that you can easily manage from the root of the project
 - unhide files
 - list hidden files
 
-## installation
+### installation and initialization
+#### install via pip
 ```bash
 pip install githide
 ```
-
-## usage
-initialize githide. This command will create a secondary gitignore file: `.gitignore.local` at the root of the git repository. It will also execute `git config core.excludesfile .gitignore.local` and add `.gitignore.local` to the `.git/info/exclude` file. This will ensure that the `.gitignore.local` file, and each file added to it, is not tracked by git.
-
+#### initialize githide. 
 ```bash
 githide init
 ```
+This command will create a secondary gitignore file: `.gitignore.local` at the root of the git repository. It will also execute `git config core.excludesfile .gitignore.local` and add `.gitignore.local` to the `.git/info/exclude` file. This will ensure that the `.gitignore.local` file, and each file added to it, is not tracked by git.
+
+### usage
 hide a file or directory
 ```bash
 githide add <file>
