@@ -5,7 +5,7 @@ logging.basicConfig(
 )
 
 
-def list():
+def list_files():
     """
     Lists all hidden files.
     """

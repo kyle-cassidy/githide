@@ -1,7 +1,7 @@
 import argparse
 from githide.add_command import add
 from githide.init_command import init
-from githide.list_command import list
+from githide.list_command import list_files
 from githide.remove_command import remove
 from githide.undo_command import undo
 
@@ -15,10 +15,10 @@ def main():
     parser_add.add_argument("file", type=str, help="The file to add")
 
     # Init command
-    parser_init = subparsers.add_parser("init", help="Initialize the tool")
+    subparsers.add_parser("init", help="Initialize the tool")
 
     # List command
-    parser_list = subparsers.add_parser("list", help="List all hidden files")
+    subparsers.add_parser("list", help="List all hidden files")
 
     # Remove command
     parser_remove = subparsers.add_parser(
@@ -27,7 +27,7 @@ def main():
     parser_remove.add_argument("file", type=str, help="The file to remove")
 
     # Undo command
-    parser_undo = subparsers.add_parser("undo", help="Undo the last hide operation")
+    subparsers.add_parser("undo", help="Undo the last hide operation")
 
     args = parser.parse_args()
 
@@ -36,7 +36,7 @@ def main():
     elif args.command == "init":
         init()
     elif args.command == "list":
-        files = list()
+        files = list_files()
         for file in files:
             print(file)
     elif args.command == "remove":
