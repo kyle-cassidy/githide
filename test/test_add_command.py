@@ -2,9 +2,10 @@ import os
 import unittest
 from githide.add_command import add
 
+
 class TestAddCommand(unittest.TestCase):
     def setUp(self):
-        self.test_file = '.gitignore.local'
+        self.test_file = ".gitignore.local"
         # Ensure the test file is clean before each test
         if os.path.exists(self.test_file):
             os.remove(self.test_file)
@@ -15,10 +16,11 @@ class TestAddCommand(unittest.TestCase):
             os.remove(self.test_file)
 
     def test_add(self):
-        add('test_file.txt')
-        with open(self.test_file, 'r') as f:
+        add("test_file.txt")
+        with open(self.test_file, "r") as f:
             content = f.read()
-        self.assertIn('test_file.txt\n', content)
+        self.assertIn("test_file.txt\n", content)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     unittest.main()
